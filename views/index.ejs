@@ -14,14 +14,17 @@
         <div class="match"></div>
         <div><span class="time"></span></div>
 	<br>
+        <div id="danmuarea"><div id ="danmu"><img id="imgstock" src=""></div></div>
+	<br>
         <div id="datacontent"><font size="5" color="red">加载中 ...</font></div>
 	<br>
         <!--div>我的名字:<span class="name"></span></div-->
-        <div id="chat-area" style="width:300px;height:250px;background-color:#eef;overflow-y:scroll">
+        <!--div id="chat-area" style="width:300px;height:250px;background-color:#eef;overflow-y:scroll">
             <div class="messages">
             </div>
-        </div>
-        <input type="text" class="inputMessage" placeholder="按回车键发送" />
+        </div-->
+        <input type="text" maxlength="50" size="50" class="inputMessage" placeholder="按回车键发送" />
+	<input type="hidden" id="hidstockno" value="" />
   </body>
    <script src="/socket.io/socket.io.js"></script>
    <script src="/js/jquery.min.js"></script>
