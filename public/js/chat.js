@@ -108,6 +108,11 @@ $(function () {
         //$('.messages').append('<p>'+user+'： '+msg+'</p>');
         // 滚动条滚动到底部
         //scrollToBottom();
+    });
+    socket.on('new message', function (msg,user) {
+        //$('.messages').append('<p>'+user+'： '+msg+'</p>');
+        // 滚动条滚动到底部
+        //scrollToBottom();
 		
 	//发弹幕
 	var color="green";
@@ -118,12 +123,6 @@ $(function () {
 
 	var new_obj=eval('('+text_obj+')');
 	$('#danmu').danmu("addDanmu",new_obj);
-
-    });
-    socket.on('new message', function (msg,user) {
-        $('.messages').append('<p>'+user+'： '+msg+'</p>');
-        // 滚动条滚动到底部
-        scrollToBottom();
     });
     socket.on('time', function (data) {
         $('.time').text(data.time);
