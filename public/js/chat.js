@@ -24,6 +24,17 @@ $(function () {
 			return "gray";
 		}
     };
+	
+    function getSzSh (stockid) {
+		if (stockid.charAt(0)=="6")
+		{
+			return "sh" + stockid;
+		}
+		else
+		{
+			return "sz" + stockid;
+		}
+    };
 
 	var getnewsina = function(){
 		//alert("http://image.sinajs.cn/newchart/min/n/" + getSzSh($('#hidstockno').val()) + ".gif?t=" + new Date());
@@ -94,9 +105,20 @@ $(function () {
         socket.emit('join',name);
     })
     socket.on('sys', function (msg) {
-        $('.messages').append('<p>'+msg+'</p>');
+        //$('.messages').append('<p>'+user+'： '+msg+'</p>');
         // 滚动条滚动到底部
-        scrollToBottom();
+        //scrollToBottom();
+		
+	//发弹幕
+	var color="green";
+	var size="0";
+	var position = "0";//滚动
+	var time = $('#danmu').data("nowTime")+1;
+	var text_obj='{ "text":"'+msg+'","color":"'+color+'","size":"'+size+'","position":"'+position+'","time":'+time+'}';
+
+	var new_obj=eval('('+text_obj+')');
+	$('#danmu').danmu("addDanmu",new_obj);
+
     });
     socket.on('new message', function (msg,user) {
         $('.messages').append('<p>'+user+'： '+msg+'</p>');
