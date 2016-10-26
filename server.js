@@ -19,7 +19,7 @@ var https = require('https');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var PORT = process.env.LEANCLOUD_APP_PORT||8070;
-var POLLING_INTERVAL = 4000;
+var POLLING_INTERVAL = 5000;
 var app = express();
 var pollingTimer;
 var pollingTimerArr = {};
@@ -28,8 +28,8 @@ var fs= require('fs');
 
 app.use(AV.express());
 
-app.locals.title = '免费10档行情，免费level2行情软件';
-
+//app.locals.title = '免费10档行情，免费level2行情软件';
+app.locals.title = 'office';
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
