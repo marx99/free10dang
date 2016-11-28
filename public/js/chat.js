@@ -136,7 +136,7 @@ $(function () {
 		//昨收
 		var a = jsondata.data.preClose;
 		//涨幅（差额）
-		var a1 = (jsondata.data.match - a).toFixed(2);
+		var a1 = (jsondata.data.match - a).toFixed(3);
 		//涨幅（百分比）
 		var a2 = (a1*100/a).toFixed(2) + "%";
 		//文字颜色
@@ -164,10 +164,10 @@ $(function () {
 			if (jsondata.data.buyPankou.length>i)
 			{
 				var buynum = "<td width='40'><font color='black'>买" + num10[i+1] + "</font></td>";
-				var buyprice = "<td width='50'><font color='" + getColor(a.toFixed(2),jsondata.data.buyPankou[i].price) + "'><b>" + jsondata.data.buyPankou[i].price + "</b></font></td>";
+				var buyprice = "<td width='50'><font color='" + getColor(a.toFixed(3),jsondata.data.buyPankou[i].price) + "'><b>" + jsondata.data.buyPankou[i].price + "</b></font></td>";
 				var buyvolume = "<td width='50' align='right'>" + jsondata.data.buyPankou[i].volume + "&nbsp;</td>";
 				var sellnum = "<td width='40'><font color='black'>卖" + num10[i+1] + "</font></td>";
-				var sellprice = "<td width='50'><font color='" + getColor(a.toFixed(2),jsondata.data.sellPankou[i].price) + "'><b>" + jsondata.data.sellPankou[i].price + "</b></font></td>";
+				var sellprice = "<td width='50'><font color='" + getColor(a.toFixed(3),jsondata.data.sellPankou[i].price) + "'><b>" + jsondata.data.sellPankou[i].price + "</b></font></td>";
 				var sellvolume = "<td width='50' align='right'>" + jsondata.data.sellPankou[i].volume + "&nbsp;</td>";
 
 				temphtml += "<tr>" + sellnum + sellprice + sellvolume + buynum + buyprice + buyvolume + "</tr>" ;
