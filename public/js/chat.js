@@ -38,12 +38,12 @@ $(function () {
 
 	var getnewsina = function(){
 		//alert("http://image.sinajs.cn/newchart/min/n/" + getSzSh($('#hidstockno').val()) + ".gif?t=" + new Date());
-		$("#imgstock").attr("src","http://image.sinajs.cn/newchart/min/n/" + getSzSh($('#hidstockno').val()) + ".gif?t=" + new Date());
+		//$("#imgstock").attr("src","http://image.sinajs.cn/newchart/min/n/" + getSzSh($('#hidstockno').val()) + ".gif?t=" + new Date());
 		//$("#btntest").val(new Date());
 	};
 
 	//定时刷新最新图片
-	setInterval(getnewsina,100000);
+	//setInterval(getnewsina,100000);
 	
 	$("#danmu").danmu({
 		height: 300,  //弹幕区高度
